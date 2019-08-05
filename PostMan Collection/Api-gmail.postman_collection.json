@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "5077b9f0-663a-4906-b6b6-a101d19ea2b0",
+		"name": "Api-gmail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Link para autorizar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"sebastianincarbonew\",\n    \"to\": \"sebastianincarbonew\",\n    \"subject\": \"TEST [01]\",\n    \"body\": \"Envio de mails exitoso!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3010/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autorizar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"code\":\"4/lgHIA0z-RuntGB_5s4Hbbqk93xg0ICGTe86BwCrhgHyk8bPCjf7sIrI\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3010/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendMail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"sebastianincarbonew\";\n    \"to\": \"sebastianincarbonew\";\n    \"subject\": \"TEST 01\";\n    \"body\": \"FUNICONA!\";\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3010/mail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/mail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllErrors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/error",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"error"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLastError",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/error/lastError",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"error",
+						"lastError"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
